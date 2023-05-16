@@ -6,20 +6,16 @@ const PORT = 3000;
 
 app.use(cors());
 
-app.get('/anime', async (req, res) => {
+app.get('/movies', async (req, res) => {
   const options = {
     method: 'GET',
-    url: 'https://anime-db.p.rapidapi.com/anime',
-    params: {
-      page: '1',
-      size: '15'
-    },
+    url: 'https://imdb-top-100-movies1.p.rapidapi.com/',
     headers: {
       'X-RapidAPI-Key': '9dda88e499msh80c9e8008f62435p1d728djsnfa28e5eb5c06',
-      'X-RapidAPI-Host': 'anime-db.p.rapidapi.com'
+      'X-RapidAPI-Host': 'imdb-top-100-movies1.p.rapidapi.com'
     }
   };
-
+  
   try {
     const response = await axios.request(options);
     res.json(response.data);
@@ -73,3 +69,18 @@ app.listen(PORT, () => {
 // app.listen(port, () => {
 //   console.log(`Example app listening on port ${port}`)
 // })
+
+
+
+
+// const options = {
+//   method: 'GET',
+//   url: 'https://anime-db.p.rapidapi.com/anime',
+//   params: {
+//     page: '1',
+//     size: '15'
+//   },
+//   headers: {
+//     'X-RapidAPI-Key': '9dda88e499msh80c9e8008f62435p1d728djsnfa28e5eb5c06',
+//     'X-RapidAPI-Host': 'anime-db.p.rapidapi.com'
+//   }

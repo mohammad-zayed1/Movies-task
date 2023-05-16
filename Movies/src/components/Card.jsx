@@ -12,7 +12,7 @@ export const Card = ({ id, title, rank, image , link }) => {
         </figure>
         <div className="card-body">
           <h2 className="card-title">{title}</h2>
-          <p>{rank}</p>
+          <p> Rank : {rank}</p>
           <div className="card-actions justify-end">
             <a className="btn btn-primary" href={link}> Watch Now</a>
           </div>
